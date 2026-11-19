@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioNest - Positioning Elements</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#f5f7f1; margin:0; padding:20px; text-align:center; }
+  h1 { color:#2e5a3c; margin:0 0 4px; }
+  .container { position: relative; max-width: 600px; margin: 16px auto; }
+  .container img { width: 100%; display: block; border-radius: 8px; }
+  .label { position: absolute; background: rgba(29,43,34,.85); color: #fff; padding: 6px 10px; border-radius: 4px; font-size: 14px; transition: .2s; }
+  .tl { top: 10px; left: 10px; }
+  .tr { top: 10px; right: 10px; }
+  .bl { bottom: 10px; left: 10px; }
+  .br { bottom: 10px; right: 10px; }
+  .center { top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 18px; font-weight: bold; }
+  .active { background: #f2c14e; color: #1d2b22; outline: 3px solid #fff; }
+  .buttons button { margin: 3px; padding: 8px 12px; cursor: pointer; background:#2e5a3c; color:#fff; border:0; border-radius:4px; }
+  .buttons button:hover { background:#7fb069; color:#1d2b22; }
+</style>
+</head>
+<body>
+<h1>BioNest</h1>
+<p>Biodegradable packaging solutions</p>
+
+<div class="container">
+  <!-- Replace this inline image with your own product photo if you have one -->
+  <img alt="BioNest compostable box on a leaf background" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23dfe9d3'/%3E%3Cpath d='M0 330 C150 280 300 380 600 300 V400 H0Z' fill='%237fb069'/%3E%3Cpolygon points='200,200 300,160 400,200 300,240' fill='%23d6b27a'/%3E%3Cpolygon points='200,200 300,240 300,330 200,290' fill='%23b98b55'/%3E%3Cpolygon points='400,200 300,240 300,330 400,290' fill='%239c7340'/%3E%3C/svg%3E">
+  <div class="label tl" id="l1">100% Compostable</div>
+  <div class="label tr" id="l2">Plant-based Ink</div>
+  <div class="label center" id="l3">BioNest Box</div>
+  <div class="label bl" id="l4">Zero Plastic</div>
+  <div class="label br" id="l5">Home Compost Safe</div>
+</div>
+
+<div class="buttons">
+  <button onclick="highlight('l1')">Top Left</button>
+  <button onclick="highlight('l2')">Top Right</button>
+  <button onclick="highlight('l3')">Center</button>
+  <button onclick="highlight('l4')">Bottom Left</button>
+  <button onclick="highlight('l5')">Bottom Right</button>
+</div>
+
+<script>
+  function highlight(id) {
+    document.querySelectorAll(".label").forEach(l => l.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+  }
+</script>
+</body>
+</html>
